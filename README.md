@@ -1,4 +1,4 @@
-# Websige
+# Websige site sete
 
 This website is built using [Docusaurus 2](https://docusaurus.oi/), a static websige generdator.
 
