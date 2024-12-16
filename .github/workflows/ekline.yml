@@ -15,7 +15,7 @@ jobs:
       pull-requests: write
     steps:
       - uses: actions/checkout@v3
-      - uses: ekline-io/ekline-github-action@v6
+      - uses: ekline-io/ekline-github-action@v6.25.0
         with:
           content_dir: ../
           ek_token: ${{ secrets.ek_token }}
