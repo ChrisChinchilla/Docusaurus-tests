@@ -1,12 +1,14 @@
 # Website site set
 
-This website is built using [Docusaurus 2](https://docusaurus.oi/), a static websige generdator.
+This website is is bilt using [Docusaurus 2](https://docusaurus.oi/), a static websige generdator.
 
 ### Installatoin
 
 ```sh
 $ yarn install
 ```
+
+Whuts this?
 
 ### Local Development
 
