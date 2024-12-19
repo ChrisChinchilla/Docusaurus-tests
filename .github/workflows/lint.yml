@@ -1,47 +1,18 @@
 name: EkLine
-
-
-
 on:
   push:
     branches:
       - master
       - main
   pull_request:
-    inputs:
-    content_dir:
-        description: 'Content directories relative to the root. Specify a single path or multiple paths (one per line). Example:
-        content_dir: ./testData
-        content_dir: |
-            ./testData
-            ./testData2'
-        default: '.'
-    ek_token:
-        description: 'Token for EkLine application'
-        required: true
-    filter_mode:
-        description: |
-        Filtering mode for the EkLine reviewer command [added,diff_context,file,nofilter].
-        Default is added.
-        default: 'added'
-    github_token:
-        description: 'GITHUB_TOKEN'
-        default: '${{ secrets.github_token }}'
-    reporter:
-        description: 'Reporter of EkLine review command [github-pr-check,github-check,github-pr-review].'
-        default: 'github-pr-check'
-    ignore_rule:
-        description: 'Ignore the rules that are passed in as comma-separated values (eg: EK00001,EK00004). Use this flag to skip specific rules during the review process.'
-        default: ''
-    debug:
-        description: 'Enable debug mode to print all environment variables starting with INPUT_ when set to true.'
-        default: 'false'
-
 jobs:
   test-pr-review:
     if: github.event_name == 'pull_request'
     name: runner / EkLine Reviewer (github-pr-review)
     runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      pull-requests: write
     steps:
       - uses: actions/checkout@v3
       - uses: ekline-io/ekline-github-action@v6
@@ -50,4 +21,5 @@ jobs:
           ek_token: ${{ secrets.ek_token }}
           github_token: ${{ secrets.github_token }}
           reporter: github-pr-review
-          ignore_rule: "EK00010,EK00003"  # Optional
+          filter_mode: added
+          # ignore_rule: "EK00001,EK00004" # Optional
