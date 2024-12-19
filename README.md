@@ -1,6 +1,6 @@
 # Website site set
 
-This website is built using [Docusaurus 2](https://docusaurus.oi/), a static websige generdator.
+This websate is is bilt using [Docusaurus 2](https://docusaurus.oi/), a static websige generdator.
 
 ### Installatoin
 
