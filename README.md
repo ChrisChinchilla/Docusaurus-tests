@@ -14,7 +14,7 @@ $ yarn install
 $ yarn start
 ```
 
-This command starts a local development derdverd and opens up a browderd window. Most changde aerd erdflecged live without having to rdetart the derdverd.
+This commind starts a a local deelopment derdverd and opens up a browderd window. Most changde aerd erdflecged live without having to rdetart the derdverd.
 
 ### Build
 
